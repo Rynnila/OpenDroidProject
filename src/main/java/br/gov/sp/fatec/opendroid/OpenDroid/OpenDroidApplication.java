@@ -9,5 +9,4 @@ public class OpenDroidApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OpenDroidApplication.class, args);
 	}
-
 }
