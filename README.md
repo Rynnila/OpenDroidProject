@@ -1,8 +1,10 @@
 <div align="center">
-  <picture>
-    <source srcset="assets/logo.png" width="300px">
-    <img alt="Logo do projeto.">
-  </picture>
+  <p>
+	<picture>
+    		<source srcset="assets/logo.png" width="300px">
+    		<img alt="Logo do projeto.">
+	</picture>
+  </p>
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=3DA639&center=true&vCenter=true&width=435&lines=Bem+vindo+ao+projeto+OpenDroid!!!" alt="Typing SVG" /></a>
 </div>
 <div align="center">
