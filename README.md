@@ -1,7 +1,7 @@
 <div align="center">
   <p>
 	<picture>
-    		<source srcset="assets/logo.png" width="300px">
+    		<source srcset="assets/logo1.png" width="300px">
     		<img alt="Logo do projeto.">
 	</picture>
   </p>
