@@ -30,14 +30,9 @@
 
 Após clonar o repositório entre na pasta raiz do projeto react
 
-No __Linux__ e __MacOS__ use o comando:
+Use o comando:
 ```bash
 cd frontend/OpenDroid
-```
-
-No __Windows__ use:
-```bash
-cd frontend\OpenDroid
 ```
 
 Agora baixe as dependências do projeto com:
