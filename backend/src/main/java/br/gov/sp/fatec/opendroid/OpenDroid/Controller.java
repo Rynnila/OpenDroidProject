@@ -6,8 +6,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
     
-    @GetMapping("/ola-mundo")
-    public String aloMundo() {
-        return "Olá Mundo!!";
+    @GetMapping("/login")
+    public String login() {
+        return "Página de Login";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+        return "Página Home";
+    }
+
+    @GetMapping("/perfil")
+    public String perfil() {
+        return "Página do Usuário";
+    }
+
+    @GetMapping("/Cadastro")
+    public String cadastro() {
+        return "Página de Cadastro";
     }
 }
