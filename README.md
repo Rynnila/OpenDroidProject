@@ -1,7 +1,7 @@
 <div align="center">
   <p>
 	<picture>
-    		<source srcset="assets/logo1.png" width="100px">
+    		<source srcset="frontend/OpenDroid/src/assets/logo.png" width="100px">
     		<img alt="Logo do projeto.">
 	</picture>
   </p>
@@ -17,8 +17,46 @@
 
 <div align="center">
   <h2>Integrantes</h2>
-  <p>Alinny Ribeiro</p>
-  <p>Eduardo de Paula Pestana</p>
-  <p>Nickolas Augusto Albuquerque Primo</p>
-  <p>Pedro Henrique Costa Pereira</p>
 </div>
+
+- Alinny Ribeiro
+- Eduardo de Paula Pestana
+- Nickolas Augusto Albuquerque Primo
+- Pedro Henrique Costa Pereira
+
+<div align="center">
+  <h2>Inicializando aplicação localmente(FrontEnd)</h2>
+</div>
+
+Após clonar o repositório entre na pasta raiz do projeto react
+
+No __Linux__ e __MacOS__ use o comando:
+```bash
+cd frontend/OpenDroid
+```
+
+No __Windows__ use:
+```bash
+cd frontend\OpenDroid
+```
+
+Agora baixe as dependências do projeto com:
+```bash
+npm i
+```
+
+Inicie o projeto com o comando:
+```bash
+npm run dev
+```
+
+Caso o processo tenha ocorrido com sucesso o projeto sera hospedado em:
+```bash
+http://localhost:5173/
+```
+
+
+
+
+
+
