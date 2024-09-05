@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavContainer, NavItem, Logo } from './style.jsx';
-import logo from '../../assets/logo.png';
+import React from 'react'
+import { NavContainer, NavItem, Logo } from './style'
+import logo from '../../assets/logo.png'
 
 const NavBar = () => {
   return (
@@ -14,7 +14,7 @@ const NavBar = () => {
         <NavItem href="#contact">Sobre</NavItem>
     </div>
     </NavContainer>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

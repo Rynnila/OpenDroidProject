@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavContainer = styled.nav`
   background-color: #223321;
@@ -6,8 +6,8 @@ export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   color: white;
-  font-family:  'Montserrat', sans-serif;;
-`;
+  font-family:  'Montserrat', sans-serif
+`
 
 export const NavItem = styled.a`
   color: white;
@@ -17,10 +17,10 @@ export const NavItem = styled.a`
   &:hover {
     text-decoration: underline;
   }
-`;
+`
 
 export const Logo = styled.img`
   width: 100px;   
   height: auto;  
-  margin-right: 20px; /
-`;
+  margin-right: 20px;
+`
