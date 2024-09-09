@@ -3,7 +3,8 @@ USE opendroid;
 
 CREATE TABLE Usuario (
 	id_usuario 	INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
-    imagem 		LONGBLOB 		NULL,
+    username    VARCHAR(256)    NOT NULL,
+    --imagem 		LONGBLOB 		NULL,
     email 		VARCHAR(256) 	NOT NULL,
     senha 		VARCHAR(256) 	NOT NULL,
 	status 		VARCHAR(256) 	NOT NULL
