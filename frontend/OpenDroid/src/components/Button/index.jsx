@@ -1,5 +1,12 @@
-function btnName({ name }){
-     return <button type="button">{ name ? name : "Button"}</button>
+import React from 'react';
+import StyledButton from './styles.js'; 
+
+function GenericButton({ name, bgColor, textColor, hoverColor }) {
+  return (
+    <StyledButton bgColor={bgColor} textColor={textColor} hoverColor={hoverColor}>
+      {name || 'Button'}
+    </StyledButton>
+  );
 }
 
-export default btnName
+export default GenericButton;
