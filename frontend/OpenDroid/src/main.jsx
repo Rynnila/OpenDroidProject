@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import Register from './containers/Register/index';
+import Login from './containers/Login/index';
+import Redefinir from './containers/Redefinir/index';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar'; 
 import GenericButton from './components/Button';
 import GenericInput from './components/Input';
@@ -14,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar />
 
       <GenericButton 
         name="Login"      
@@ -24,7 +27,10 @@ function App() {
         value={inputValue}
         onChange={handleChange}
         placeholder="Enter text"
-      />
+      /> */}
+
+      {/* Aqui você vai chamar o container Register */}
+      <Register />
     </div>
   );
 }
