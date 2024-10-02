@@ -9,33 +9,37 @@ import GenericButton from './components/Button';
 import GenericInput from './components/Input';
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
+  const [container, setContainer] = useState('Login');
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const handleContainerChange = (container) => {
+    console.log('Container:', container);
+    setContainer(container);
   };
 
   return (
     <div>
-      {/* <NavBar />
-
       <GenericButton 
-        name="Login"      
+        name="Login" 
+        onClick={() => handleContainerChange('Login')} 
+      />
+      <GenericButton 
+        name="Register" 
+        onClick={() => handleContainerChange('Register')} 
+      />
+      <GenericButton 
+        name="Redefinir" 
+        onClick={() => handleContainerChange('Redefinir')} 
       />
 
-      <GenericInput
-        value={inputValue}
-        onChange={handleChange}
-        placeholder="Enter text"
-      /> */}
-
-      {/* Aqui você vai chamar o container Register */}
-      <Register />
+      {container === 'Login' && <Login />}
+      {container === 'Register' && <Register />}
+      {container === 'Redefinir' && <Redefinir />}
     </div>
   );
 }
 
-createRoot(document.getElementById('root')).render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <StrictMode>
     <App />
   </StrictMode>,
