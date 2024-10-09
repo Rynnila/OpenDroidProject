@@ -1,0 +1,115 @@
+/* Container principal para centralizar o formulário */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Caixa do formulário de registro */
+  .register-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Container para os inputs */
+  .input-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  /* Ícone dentro do input */
+  .icon {
+    position: absolute;
+    color: #888888;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Estilo dos inputs */
+  .input {
+    width: 100%;
+    padding: 12px 40px 12px 40px; /* Ajuste o padding para acomodar o ícone */
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    color: #333333;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Garantir que o padding seja incluído na largura total */
+  }
+  
+  .input:focus {
+    border-color: #007bff;
+  }
+  
+  .input::placeholder {
+    color: #aaaaaa;
+  }
+  
+  /* Estilo das mensagens de erro */
+  .error {
+    color: #ff4d4f;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+  /* Botão de registro */
+  .bt-register {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bt-register:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Container para o link de login */
+  .login-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .new {
+    color: #333333;
+  }
+  
+  .login {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .login:hover {
+    color: #0056b3;
+  }
