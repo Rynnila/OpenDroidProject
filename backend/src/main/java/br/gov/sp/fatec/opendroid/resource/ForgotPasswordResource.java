@@ -45,7 +45,7 @@ public class ForgotPasswordResource {
     }
 
     public void sendEmail(String recipientEmail, String link) throws MessagingException, IOException {
-        String url = "http://localhost:3000/forgot-password?email=" + recipientEmail + "&link=" + link;
+        String url = "http://localhost:3001/forgot-password?email=" + recipientEmail + "&link=" + link;
         String response = restTemplate.getForObject(url, String.class);
         System.out.println("Resposta do Node.js: " + response);
     }
