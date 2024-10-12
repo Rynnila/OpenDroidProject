@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box; /* Adiciona box-sizing globalmente */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2e402e; /* Cor de fundo do corpo */
+}
+
+.forum-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh; /* Garante que o container ocupe toda a altura da tela */
+}
+
+.navbar {
+  width: 100%;
+  background-color: #3a523a;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Para separar o título e os links */
+  align-items: center;
+  position: fixed; /* Fixa a navbar no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que a navbar fique acima do conteúdo */
+}
+
+.navbar-links a {
+  color: #8dc63f;
+  text-decoration: none;
+  margin: 0 15px; /* Espaçamento entre os links */
+}
+
+.navbar-links a:hover {
+  text-decoration: underline; /* Efeito ao passar o mouse sobre os links */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Alinhado à largura total da tela */
+  max-width: 800px; /* Limitar largura máxima */
+  margin: 20px auto; /* Espaço para o alinhamento central */
+  padding: 30px; /* Aumentar o espaço interno */
+  background-color: #3a523a; /* Cor de fundo do container */
+  border-radius: 5px; /* Borda arredondada */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito */
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre os comentários */
+  margin-top: 20px; /* Espaço acima da lista */
+}
+
+.comment-container {
+  background-color: #4c634c; /* Cor de fundo dos comentários */
+  display: flex;
+  border-radius: 10px;
+  padding: 15px; /* Aumentar o padding dos comentários */
+}
+
+.comment-img {
+  width: 50px; /* Tamanho da imagem do usuário */
+  height: 50px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.bt-comment {
+  background-color: #8dc63f;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 99; /* Acima do conteúdo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito */
+}
+
+.comment-pop {
+  display: block; /* Mantido visível, sem janela sobreposta */
+  background-color: rgba(255, 255, 255, 0.95); /* Fundo leve */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px; /* Espaço acima do formulário */
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title-pop {
+  color: #8dc63f;
+  font-size: 24px;
+  margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+input,
+textarea {
+  background: rgba(61, 166, 57, 0.3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px; /* Espaçamento entre os campos */
+}
+
+.btn {
+  background: #4caf50;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.tags {
+  display: flex;
+  gap: 5px; /* Espaçamento entre as tags */
+}
+
+.tag {
+  background-color: #a3d65b;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px; /* Ajuste de margem para telas pequenas */
+    padding: 15px; /* Reduzir o padding em telas pequenas */
+  }
+
+  .bt-comment {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title-pop {
+    font-size: 20px; /* Tamanho da fonte reduzido */
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* Centraliza os botões de navegação */
+  margin-top: 20px; /* Espaço acima da paginação */
+}
+
+.pagination button {
+  background-color: #8dc63f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #666; /* Cor quando desativado */
+  cursor: not-allowed; /* Muda o cursor quando desativado */
+}
+
+.pagination span {
+  align-self: center; /* Centraliza o texto da página */
+  color: white;
+  margin: 0 10px; /* Espaçamento horizontal */
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Para garantir que fique sobre todos os outros elementos */
+}
+
+.comment-pop {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px; /* Ajuste conforme necessário */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Para centralizar verticalmente */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center; /* Para centralizar verticalmente */
+}
+
+.navbar-links input {
+  margin-right: 650px; /* Espaço entre o campo de busca e os links */
+}
