@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./Forum.css"; 
-import Swal from "sweetalert2"; 
-import { getComments, insertComment, deleteComment } from "../../services/comment.service"; 
-import UtilsService from "../../services/utils.service"; 
+import "./Forum.css";
+import Swal from "sweetalert2";
+import { getComments, insertComment, deleteComment, updateComment } from "../../services/comment.service";
+import UtilsService from "../../services/utils.service";
 
 // Importe as imagens
 import drodroid1 from "../../assets/imgs/drodroid.png";
@@ -20,11 +20,13 @@ const Forum = () => {
     tag: "#",
     date: new Date(),
   });
+
+  const [editingComment, setEditingComment] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const commentsPerPage = 10;
+  const commentsPerPage = 5;
   const [hoveredCommentId, setHoveredCommentId] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); // Estado para o termo de busca
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Array de imagens
   const images = [drodroid1, drodroid2, drodroid3, drodroid4, drodroid5];
@@ -34,9 +36,23 @@ const Forum = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = comments.filter(comment => 
-      comment.comment.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      UtilsService.cutTags(comment.tag).some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    const filtered = comments.filter(comment =>
+      comment.comment
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .includes(
+          searchTerm.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+        ) ||
+      UtilsService.cutTags(comment.tag).some(tag =>
+        tag
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .includes(
+            searchTerm.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+          )
+      )
     );
     setFilteredComments(filtered);
     setCurrentPage(1); // Reseta para a primeira página ao buscar
@@ -68,12 +84,21 @@ const Forum = () => {
     const invalidFields = UtilsService.findInvalidControls(formData);
     if (invalidFields.length === 0) {
       try {
-        await insertComment(formData);
-        Swal.fire({
-          icon: "success",
-          title: "Postagem realizada com sucesso!",
-          timer: 5000,
-        });
+        if (editingComment) {
+          await updateComment(editingComment.id, formData);
+          Swal.fire({
+            icon: "success",
+            title: "Comentário atualizado com sucesso!",
+            timer: 5000,
+          });
+        } else {
+          await insertComment(formData);
+          Swal.fire({
+            icon: "success",
+            title: "Postagem realizada com sucesso!",
+            timer: 5000,
+          });
+        }
         setFormData({
           title: "",
           comment: "",
@@ -82,10 +107,11 @@ const Forum = () => {
         });
         fetchComments();
         setIsPopupVisible(false);
+        setEditingComment(null); // Reseta após a edição
       } catch (error) {
         Swal.fire({
           icon: "warning",
-          title: `Erro ao postar comentário: ${error.message}`,
+          title: `Erro ao ${editingComment ? "atualizar" : "postar"} comentário: ${error.message}`,
           timer: 5000,
         });
       }
@@ -163,7 +189,16 @@ const Forum = () => {
       <section className="container">
         <button
           className="bt-comment"
-          onClick={() => setIsPopupVisible(true)}
+          onClick={() => {
+            setFormData({
+              title: "",
+              comment: "",
+              tag: "#",
+              date: new Date(),
+            });
+            setEditingComment(null);
+            setIsPopupVisible(true);
+          }}
         >
           <i className="icon-plus" style={{ fontSize: "30px" }}></i>
         </button>
@@ -175,7 +210,7 @@ const Forum = () => {
               onMouseEnter={() => setHoveredCommentId(comment.id)}
               onMouseLeave={() => setHoveredCommentId(null)}
             >
-              <img className="comment-img" src={comment.image} alt="User Avatar" /> {/* Usa a imagem do comentário */}
+              <img className="comment-img" src={comment.image} alt="User Avatar" />
               <div className="comment-content">
                 <span className="comment-username">Drodroid</span>
                 <span className="comment-title">{comment.title}</span>
@@ -189,7 +224,20 @@ const Forum = () => {
                     <button onClick={() => handleDeleteComment(comment.id)} className="delete-button">
                       Remover
                     </button>
-                    <button className="edit-button">Editar</button>
+                    <button
+                      className="edit-button"
+                      onClick={() => {
+                        setFormData({
+                          title: comment.title,
+                          comment: comment.comment,
+                          tag: comment.tag,
+                        });
+                        setEditingComment(comment);
+                        setIsPopupVisible(true);
+                      }}
+                    >
+                      Editar
+                    </button>
                   </div>
                 )}
               </div>
@@ -211,7 +259,7 @@ const Forum = () => {
             <div className="comment-pop">
               <form onSubmit={handleSubmit}>
                 <div className="post-container">
-                  <span className="title-pop">Crie seu comentário!</span>
+                  <span className="title-pop">{editingComment ? "Editar comentário" : "Crie seu comentário!"}</span>
                   <input
                     type="text"
                     id="titulo"
@@ -240,15 +288,8 @@ const Forum = () => {
                     value={formData.tag}
                     onChange={handleInputChange}
                   />
-                  <input type="submit" className="btn" value="Postar" />
-                  <button 
-                    type="button" 
-                    className="btn" 
-                    onClick={() => setIsPopupVisible(false)}
-                    style={{ marginLeft: '10px' }}
-                  >
-                    Cancelar
-                  </button>
+                  <button type="submit" className="submit-btn">{editingComment ? "Atualizar!" : "Postar!"}</button>
+                  <button className="cancel-btn" onClick={() => setIsPopupVisible(false)}>Cancelar</button>
                 </div>
               </form>
             </div>

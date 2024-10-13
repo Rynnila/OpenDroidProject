@@ -10,7 +10,7 @@ body {
 }
 
 .forum-container {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -50,12 +50,13 @@ body {
   background-color: #3a523a; /* Cor de fundo do container */
   border-radius: 5px; /* Borda arredondada */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito */
+  margin-top: 30vh!important; /* Aumentar o topo para a lista de comentários */
 }
 
 .comment-list {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Espaçamento entre os comentários */
+  gap: 15px; /* Espaçamento entre os comentários */
   margin-top: 20px; /* Espaço acima da lista */
 }
 
