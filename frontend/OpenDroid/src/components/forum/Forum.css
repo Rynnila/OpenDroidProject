@@ -47,7 +47,6 @@ body {
   max-width: 800px; /* Limitar largura máxima */
   margin: 20px auto; /* Espaço para o alinhamento central */
   padding: 30px; /* Aumentar o espaço interno */
-  background-color: #3a523a; /* Cor de fundo do container */
   border-radius: 5px; /* Borda arredondada */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito */
   margin-top: 30vh!important; /* Aumentar o topo para a lista de comentários */
@@ -61,7 +60,7 @@ body {
 }
 
 .comment-container {
-  background-color: #4c634c; /* Cor de fundo dos comentários */
+  background-color: #5fac5f; /* Cor de fundo dos comentários */
   display: flex;
   border-radius: 10px;
   padding: 15px; /* Aumentar o padding dos comentários */
@@ -108,7 +107,7 @@ body {
 }
 
 .title-pop {
-  color: #8dc63f;
+  color: #538013;
   font-size: 24px;
   margin-bottom: 10px; /* Espaço abaixo do título */
 }
@@ -116,7 +115,7 @@ body {
 input,
 textarea {
   background: rgba(61, 166, 57, 0.3);
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -224,4 +223,83 @@ textarea {
 
 .navbar-links input {
   margin-right: 650px; /* Espaço entre o campo de busca e os links */
+}
+
+/* Estilos gerais para os botões de ação */
+.delete-button,
+.edit-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botão Remover */
+.delete-button {
+  background-color: #FF4D4F; /* Vermelho para representar perigo/remoção */
+  color: white; /* Cor do texto em branco */
+}
+
+/* Hover para o botão Remover */
+.delete-button:hover {
+  background-color: #D32F2F; /* Vermelho mais escuro no hover */
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+/* Botão Editar */
+.edit-button {
+  background-color: #43D14D; /* Cor PRIMARY */
+  color: white; /* Texto branco */
+  margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+/* Hover para o botão Editar */
+.edit-button:hover {
+  background-color: #2B9E32; /* Cor PRIMARY um pouco mais escura no hover */
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+/* Estilos gerais para garantir o mesmo tamanho */
+.submit-btn,
+.cancel-btn {
+  padding: 12px 20px; /* Mesma altura e largura dos botões */
+  min-width: 120px; /* Garante que ambos os botões tenham largura mínima */
+  background-color: #43D14D; /* Cor PRIMARY para submit */
+  color: white; /* Texto branco */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px
+}
+
+/* Hover para o botão de envio (submit) */
+.submit-btn:hover {
+  background-color: #2B9E32; /* Cor PRIMARY mais escura no hover */
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+/* Botão de cancelar com estilos diferentes */
+.cancel-btn {
+  background-color: #FF4D4F; /* Cor de cancelamento, vermelho */
+  margin-right: 0; /* Remove margem à direita no último botão */
+}
+
+/* Hover para o botão de cancelar */
+.cancel-btn:hover {
+  background-color: #D32F2F; /* Cor vermelha mais escura no hover */
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+/* Adiciona um espaço entre os botões */
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px; /* Espaço entre os botões */
 }

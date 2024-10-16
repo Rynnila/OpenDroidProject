@@ -23,7 +23,7 @@ const Forum = () => {
 
   const [editingComment, setEditingComment] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const commentsPerPage = 5;
+  const commentsPerPage = 4;
   const [hoveredCommentId, setHoveredCommentId] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");

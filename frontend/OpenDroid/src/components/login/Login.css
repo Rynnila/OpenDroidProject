@@ -1,99 +1,103 @@
-/* Login.css */
-
+/* Estilos globais */
 body {
-  background-color: #f4f4f4; /* Cor de fundo da página */
-  font-family: Arial, sans-serif; /* Fonte padrão */
-  margin: 0; /* Remove a margem padrão do corpo */
-  padding: 0; /* Remove o preenchimento padrão do corpo */
-  display: flex; /* Usado para centralizar o formulário */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* Ocupa toda a altura da janela */
+  background-color: #D9D9D9; /* Cor LIGHT GRAY de fundo */
+  font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .login-container {
-  background-color: #fff; /* Cor de fundo do contêiner de login */
-  border-radius: 8px; /* Cantos arredondados */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
-  padding: 20px; /* Espaçamento interno */
-  width: 300px; /* Largura fixa */
+  background-color: #FFFFFF; /* Cor SECONDARY */
+  border-radius: 10px; /* Borda mais suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 40px; /* Espaço interno maior */
+  width: 350px; /* Largura um pouco maior */
 }
 
 .login-box {
-  display: flex; /* Usado para empilhar os elementos */
-  flex-direction: column; /* Direção da pilha */
-  align-items: center; /* Alinha os itens ao centro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-logo {
-  width: 80%; /* Largura da imagem do logo */
-  margin-bottom: 20px; /* Espaçamento abaixo do logo */
+  width: 80%;
+  margin-bottom: 30px; /* Aumentar o espaçamento abaixo do logo */
 }
 
 .input-container {
-  width: 100%; /* Ocupa toda a largura do contêiner */
-  margin-bottom: 15px; /* Espaçamento entre os campos */
-  position: relative; /* Para posicionar ícones */
+  width: 100%;
+  margin-bottom: 20px; /* Espaçamento maior entre os campos */
+  position: relative;
 }
 
 .login-icon {
-  position: absolute; /* Posiciona o ícone sobre o input */
-  left: 10px; /* Espaçamento à esquerda */
-  top: 50%; /* Centraliza verticalmente */
-  transform: translateY(-50%); /* Ajusta para centralizar o ícone */
-  color: #888; /* Cor do ícone */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5A5A5A; /* Cor ACTION para os ícones */
 }
 
 .login-input {
-  width: 100%; /* Ocupa toda a largura do contêiner */
-  padding: 10px 30px; /* Espaçamento interno */
-  border: 1px solid #ccc; /* Borda leve */
-  border-radius: 4px; /* Cantos arredondados */
-  font-size: 14px; /* Tamanho da fonte */
+  width: 100%;
+  padding: 10px 40px; /* Espaçamento maior para os inputs */
+  border: 1px solid #43D14D; /* Cor PRIMARY na borda */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .login-input:focus {
-  border-color: #007bff; /* Cor da borda ao focar */
-  outline: none; /* Remove o contorno padrão */
+  border-color: #001507; /* Cor DARK GREEN ao focar */
+  outline: none;
 }
 
 .error {
-  color: red; /* Cor do texto de erro */
-  font-size: 12px; /* Tamanho da fonte para erros */
-  margin-top: 5px; /* Espaçamento acima do texto de erro */
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .bt-login {
-  width: 100%; /* Ocupa toda a largura do contêiner */
-  padding: 10px; /* Espaçamento interno */
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  border: none; /* Remove a borda padrão */
-  border-radius: 4px; /* Cantos arredondados */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Cursor em forma de ponteiro ao passar o mouse */
+  width: 100%;
+  padding: 12px; /* Um pouco maior para destaque */
+  background-color: #43D14D; /* Cor PRIMARY */
+  color: #FFFFFF; /* Texto branco */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .bt-login:hover {
-  background-color: #0056b3; /* Cor ao passar o mouse */
+  background-color: #001507; /* Cor DARK GREEN ao passar o mouse */
 }
 
 .register-login-container {
-  display: flex; /* Usado para empilhar os elementos */
-  flex-direction: column; /* Direção da pilha */
-  align-items: center; /* Alinha os itens ao centro */
-  margin-top: 10px; /* Espaçamento acima do contêiner de registro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Espaço maior acima do registro */
 }
 
 .new {
-  margin-bottom: 5px; /* Espaçamento abaixo do texto "Novo por aqui?" */
+  margin-bottom: 5px;
+  color: #5A5A5A; /* Texto ACTION */
 }
 
 .register-login {
-  color: #007bff; /* Cor do texto do link de registro */
-  cursor: pointer; /* Cursor em forma de ponteiro ao passar o mouse */
+  color: #43D14D; /* Cor PRIMARY */
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .register-login:hover {
-  text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+  text-decoration: underline;
+  color: #001507; /* Cor DARK GREEN ao passar o mouse */
 }

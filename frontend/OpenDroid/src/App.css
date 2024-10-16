@@ -1,11 +1,16 @@
 /* Estilos globais */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e0e0e0;
-  color: #333;
+  font-family: 'Montserrat', Arial, sans-serif; /* Aplicando a fonte Montserrat */
+  background-color: #D9D9D9; /* Cor LIGHT GRAY */
+  color: #000000; /* Cor BLACK para o texto */
 }
 
 .App {
   text-align: center;
+  background-color: #FFFFFF; /* Cor SECONDARY */
+  color: #333; /* Cor alternativa para o conteúdo */
+  padding: 20px; /* Adicionando espaçamento */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adicionando uma leve sombra */
 }
