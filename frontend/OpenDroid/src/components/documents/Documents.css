@@ -1,0 +1,228 @@
+/* Estilização da seção principal */
+.content {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Título */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Descrição dos documentos */
+.document-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+}
+
+/* Campo de pesquisa */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contêiner principal dos documentos */
+.document-container {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de cada documento */
+.file-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #29b94d;
+  margin-bottom: 10px;
+}
+
+/* Descrição de cada documento */
+.file-description {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+/* Tags dos documentos */
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #34ac48;
+  color: black;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Contêiner de informações do arquivo */
+.file-info-container {
+  margin-bottom: 15px;
+}
+
+/* Data de publicação */
+.file-date {
+  font-size: 12px;
+  color: #95a5a6;
+  margin-right: 10px;
+}
+
+/* Botão de download */
+.bt-file {
+  background-color: #34db7f;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.bt-file:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .document-container {
+    padding: 10px;
+  }
+
+  .file-title {
+    font-size: 16px;
+  }
+
+  .file-description {
+    font-size: 13px;
+  }
+
+  .bt-file {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+.add-document-form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.bt-add-file {
+  position: fixed; /* Fixa o botão na posição */
+  bottom: 20px; /* Distância do fundo */
+  right: 20px; /* Distância da direita */
+  border-radius: 50%; /* Torna o botão redondo */
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  display: flex; /* Para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-color: #0c741a; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+  transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+  font-size: 34px; /* Aumenta o tamanho da fonte */
+}
+
+.bt-add-file:hover {
+  background-color: #003b12; /* Cor ao passar o mouse */
+}
+
+.bt-add-file2 {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bt-add-file2:hover {
+  background-color: #27ae60;
+}
+
+
+.bt-remove-file {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.bt-remove-file:hover {
+  background-color: #c0392b;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Z-index alto para ficar acima do conteúdo */
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bt-cancel {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bt-cancel:hover {
+  background-color: #c0392b;
+}
