@@ -79,18 +79,28 @@ body {
 }
 
 .bt-comment {
-  background-color: #8dc63f;
+  background-color: #8dc63f; /* Cor de fundo do botão */
+  background-image: url("../../assets/imgs/add.svg"); /* Caminho da imagem */
+  background-size: 100% 100%; /* Faz a imagem se ajustar dentro do botão */
+  background-repeat: no-repeat; /* Garante que a imagem não se repita */
+  background-position: center; /* Centraliza a imagem dentro do botão */
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  z-index: 99; /* Acima do conteúdo */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito */
+  width: 75px; /* Tamanho do botão */
+  height: 75px; /* Tamanho do botão */
+  border-radius: 50%; /* Forma arredondada */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Indica que o botão é clicável */
+  z-index: 99; /* Faz o botão ficar acima de outros elementos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito de elevação */
+  transition: transform 0.2s ease; /* Suaviza a transição ao passar o mouse */
 }
+
+.bt-comment:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
 
 .comment-pop {
   display: block; /* Mantido visível, sem janela sobreposta */
@@ -302,4 +312,9 @@ textarea {
   display: flex;
   justify-content: flex-start;
   gap: 10px; /* Espaço entre os botões */
+}
+
+.icon-plus{
+  width: "100px";
+  height: "100px" 
 }

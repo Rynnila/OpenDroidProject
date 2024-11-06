@@ -11,6 +11,8 @@ import drodroid3 from "../../assets/imgs/drodroid_s2-s2.png";
 import drodroid4 from "../../assets/imgs/drodroid_x-x.png";
 import drodroid5 from "../../assets/imgs/drodroid.png";
 
+import addIcon from "../../assets/imgs/add.svg";
+
 const Forum = () => {
   const [comments, setComments] = useState([]);
   const [filteredComments, setFilteredComments] = useState([]);
@@ -200,7 +202,6 @@ const Forum = () => {
             setIsPopupVisible(true);
           }}
         >
-          <i className="icon-plus" style={{ fontSize: "30px" }}></i>
         </button>
         <div className="comment-list">
           {currentComments.map((comment) => (

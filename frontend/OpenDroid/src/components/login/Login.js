@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'; // Importa a biblioteca de cookies
 import axios from 'axios';
 import AlertsService from '../../services/alert.service';
 import './Login.css';
+import logoOpendroid from '../../assets/imgs/logo-opendroid-vertical.png'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -63,7 +64,7 @@ function Login() {
     <div className="login-container">
       <form className="form" onSubmit={handleSubmit}>
         <div className="login-box">
-          <img className="login-logo" src="assets/imgs/logo-opendroid-vertical.png" alt="logo-opendroid" />
+          <img className="login-logo" src={logoOpendroid} alt="logo-opendroid" />
           <div className="input-container">
             <i className="login-icon" name="mail"></i>
             <input
