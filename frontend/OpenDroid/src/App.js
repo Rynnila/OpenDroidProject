@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Register from './components/register/Register'; 
 import Login from './components/login/Login'; 
 import ForgotPassword from './components/forgotPassword/ForgotPassword'; 
@@ -12,6 +12,10 @@ function App() {
     <FilterProvider> {/* Envolvendo o app com o FilterProvider */}
       <Router>
         <Routes>
+          {/* Redirecionando de "/" para "/login" */}
+          <Route path="/" element={<Navigate to="/login" />} />
+          
+          {/* Definindo outras rotas */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forum" element={<Forum />} />

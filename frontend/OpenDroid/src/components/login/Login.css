@@ -35,21 +35,27 @@ body {
   position: relative;
 }
 
-.login-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #5A5A5A; /* Cor ACTION para os ícones */
-}
-
 .login-input {
   width: 100%;
-  padding: 10px 40px; /* Espaçamento maior para os inputs */
+  padding: 10px 40px; /* Adiciona mais espaço à direita para os ícones */
   border: 1px solid #43D14D; /* Cor PRIMARY na borda */
   border-radius: 5px;
   font-size: 14px;
   transition: border-color 0.3s ease-in-out;
+  background-repeat: no-repeat; /* Garante que a imagem não se repita */
+  background-position: 12px center; /* Centraliza o ícone de usuário à esquerda */
+  background-size: 20px 20px; /* Tamanho do ícone */
+}
+
+/* Ícone de usuário */
+.login-input.user-icon {
+  background-image: url('../../assets/imgs/icons/user.svg'); /* Caminho do ícone de usuário */
+}
+
+/* Ícone de olho */
+.login-input.eye-icon {
+  background-image: url('../../assets/imgs/icons/eye.png'); /* Caminho do ícone de olho */
+  padding-right: 40px; /* Adiciona mais espaço à direita para o ícone de olho */
 }
 
 .login-input:focus {
@@ -100,4 +106,15 @@ body {
 .register-login:hover {
   text-decoration: underline;
   color: #001507; /* Cor DARK GREEN ao passar o mouse */
+}
+
+/* Posicionando o ícone de olho de forma fixa no campo de senha */
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px; /* Ajuste fino do ícone */
+  transform: translateY(-50%); /* Centraliza verticalmente o ícone de olho */
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
 }

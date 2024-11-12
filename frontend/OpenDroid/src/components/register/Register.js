@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../../services/auth.service';
 import AlertsService from '../../services/alert.service';
+import logoOpendroid from '../../assets/imgs/logo-opendroid-vertical.png';
 import './Register.css';
 
 function Register() {
@@ -13,6 +14,11 @@ function Register() {
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Atualiza o título da página quando o componente for montado
+    document.title = "Registro - Opendroid";  // Defina o título da página aqui
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,7 +70,7 @@ function Register() {
     <div className="register-container">
       <form className="form" onSubmit={handleSubmit}>
         <div className="register-box">
-          <img className="register-logo" src="assets/imgs/logo-opendroid-vertical.png" alt="logo-opendroid" />
+          <img className="logo" src={logoOpendroid} alt="logo-opendroid" />
           <div className="input-container">
             <i className="register-icon" name="mail"></i>
             <input

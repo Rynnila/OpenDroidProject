@@ -81,7 +81,7 @@ body {
 
 .bt-comment {
   background-color: #43D14D; /* Cor de fundo do botão */
-  background-image: url("../../assets/imgs/add.svg"); /* Caminho da imagem */
+  background-image: url("../../assets/imgs/icons/add.svg"); /* Caminho da imagem */
   background-size: 100% 100%; /* Faz a imagem se ajustar dentro do botão */
   background-repeat: no-repeat; /* Garante que a imagem não se repita */
   background-position: center; /* Centraliza a imagem dentro do botão */

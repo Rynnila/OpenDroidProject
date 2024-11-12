@@ -11,8 +11,6 @@ import drodroid3 from "../../assets/imgs/drodroid_s2-s2.png";
 import drodroid4 from "../../assets/imgs/drodroid_x-x.png";
 import drodroid5 from "../../assets/imgs/drodroid.png";
 
-import addIcon from "../../assets/imgs/add.svg";
-
 const Forum = () => {
   const [comments, setComments] = useState([]);
   const [filteredComments, setFilteredComments] = useState([]);
@@ -34,6 +32,9 @@ const Forum = () => {
   const images = [drodroid1, drodroid2, drodroid3, drodroid4, drodroid5];
 
   useEffect(() => {
+    // Atualiza o título da página quando o componente for montado
+    document.title = "Fórum - Opendroid";  
+
     fetchComments();
   }, []);
 
